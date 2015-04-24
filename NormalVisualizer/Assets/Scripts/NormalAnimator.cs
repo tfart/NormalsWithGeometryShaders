@@ -4,16 +4,16 @@ using System.Collections;
 public class NormalAnimator : MonoBehaviour {
 
 	private Material mat;
-	private const float length_min = 0.16f;
-	private const float length_max = 0.3f;
+	private const float length_min = 0.06f;
+	private const float length_max = 0.2f;
 	private const float length_frequency = 1.6f;
 	
-	private const float width_min = 0.15f;
+	private const float width_min = 0.05f;
 	private const float width_max = 0.3f;
 	private const float width_frequency = 1.1f;
 
-	private const float rotation_min = 130f;
-	private const float rotation_max = 160f;
+	private const float rotation_min = 120f;
+	private const float rotation_max = 150f;
 	private const float rotation_frequency = 0.6f;
 
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class NormalAnimator : MonoBehaviour {
 
 	private static float Interpolate(float min, float max, float frequency) {
 		float delta = max - min;
-		return min + (Mathf.Sin(Time.time * frequency)*1) * delta/2;
+		return min + (Mathf.Sin(Time.time * frequency)+1) * delta/2;
 	}
 	
 	// Update is called once per frame
